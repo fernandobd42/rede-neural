@@ -1,9 +1,9 @@
 # Importando as bibliotecas
+import pandas as pd
 from sklearn.neural_network import MLPRegressor
 from sklearn import metrics
 from sklearn import model_selection as ms
 import matplotlib.pyplot as plt
-import pandas as pd
 
 base = pd.read_csv('winequality-red.csv')
 

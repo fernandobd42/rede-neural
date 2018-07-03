@@ -4,9 +4,9 @@ Algoritmo em Python para realizar regressão utilizando MLP sobre um conjunto de
 
 Para realizar a regressão do conjunto de dados, serão utilizadas três bibliotecas:
 
-* [Sklearn](http://scikit-learn.org/stable/index.html): para realizar a padronização dos dados e a regressão utilizando o modelo de [Redes Neurais](https://www.digitaltrends.com/cool-tech/what-is-an-artificial-neural-network/);
-* [Matplotlib](https://matplotlib.org/): para a geração de gráficos 2D a partir de uma lista (array); e
-* [Pandas](https://pandas.pydata.org/): para ler o conjunto de dados.
+* [Pandas](https://pandas.pydata.org/): para ler o conjunto de dados;
+* [Sklearn](http://scikit-learn.org/stable/index.html): para realizar a padronização dos dados e a regressão utilizando o modelo de [Redes Neurais](https://www.digitaltrends.com/cool-tech/what-is-an-artificial-neural-network/); e
+* [Matplotlib](https://matplotlib.org/): para a geração de gráficos 2D a partir de uma matriz.
 
 <hr>
 
@@ -21,11 +21,11 @@ depois criar um arquivo denominado ```regressao.py``` e abrir em um editor de te
 
 Importando as bibliotecas
 ````
+import pandas as pd
 from sklearn.neural_network import MLPRegressor
 from sklearn import metrics
 from sklearn import model_selection as ms
 import matplotlib.pyplot as plt
-import pandas as pd
 ````
 
 Fazendo leitura dos dados
@@ -42,12 +42,12 @@ Por meio da definição dos índices de cada tipo de atributo
 numericos = [0,1,2,3,4,5,6,7,8,9,10]
 ````
 
-indexando os índices dos atributos numericos à variáveis auxiliar
+indexando os índices dos atributos numericos à variável auxiliar
 ````
 atrib_num = base.iloc[:, numericos].values
 ````
 
-definindo o atributo classe, ou seja, a coluna (11) do conjunto de dados
+definindo o atributo classe, ou seja, a ```coluna 11``` do conjunto de dados
 ````
 classe = base.iloc[:, 11].values
 ````

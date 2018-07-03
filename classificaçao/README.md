@@ -76,7 +76,7 @@ atrib_num = base.iloc[:, numericos].values
 atrib_nom = base.iloc[:, nominais].values
 ````
 
-definindo o atributo classe, ou seja, a coluna (27) do conjunto de dados
+definindo o atributo classe, ou seja, a ```coluna 27``` do conjunto de dados
 ````
 classe = base.iloc[:, 27].values
 ````
