@@ -1,9 +1,8 @@
-#  Classificação de conjunto de dados com python
+#  Regressão de conjunto de dados com python
 
-Algoritmo em Python para realizar regressão utilizando MLP sobre u,
-conjunto de dados. Utilizando uma forma de validação estatística dos resultados.
+Algoritmo em Python para realizar regressão utilizando MLP sobre um conjunto de dados.
 
-Para realizar a regressão do conjunto de dados, será utilizado três bibliotecas:
+Para realizar a regressão do conjunto de dados, serão utilizadas três bibliotecas:
 
 * [Sklearn](http://scikit-learn.org/stable/index.html): para realizar a padronização dos dados e a regressão utilizando o modelo de [Redes Neurais](https://www.digitaltrends.com/cool-tech/what-is-an-artificial-neural-network/);
 * [Matplotlib](https://matplotlib.org/): para a geração de gráficos 2D a partir de uma lista (array); e
@@ -13,9 +12,9 @@ Para realizar a regressão do conjunto de dados, será utilizado três bibliotec
 
 ## Construindo o algoritmo do zero
 
-para isso vai ser preciso primeiro baixar o conjunto de dados [winequality-red.csv](./winequality-red.csv).
+para isso será preciso primeiramente baixar o conjunto de dados [winequality-red.csv](./winequality-red.csv).
  
-depois crie um arquivo denominado ```regressao.py``` e abra em um editor de texto.
+depois criar um arquivo denominado ```regressao.py``` e abrir em um editor de texto.
 <hr>
 
 ## após abrir o arquivo, vamos começar a implementação do código propriamente dito: 

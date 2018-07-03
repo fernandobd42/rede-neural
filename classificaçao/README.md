@@ -1,6 +1,6 @@
 #  Classificação de conjunto de dados com python
 
-Algoritmo em Python utilizando Redes neurais para classificar uma base de dados que contém atributos: Numéricos e nominais. O programa realiza a validação dos resultados utilizando k-fold. Como o algoritmo MLP é baseado em pesos aleatórios o experimento foi realizado várias vezes, ao fim foi calculado média e desvio padrão da taxa de sucesso para todas as execuções.
+Algoritmo em Python utilizando Redes neurais para classificar uma base de dados que contém atributos: Numéricos e nominais. O programa realiza a validação dos resultados utilizando k-fold. Como o algoritmo MLP é baseado em pesos aleatórios o experimento deve ser realizado várias vezes, ao fim deve ser calculado a média e o desvio padrão da taxa de sucesso para todas as execuções.
 
 Para realizar a classificação do conjunto de dados (do inglês dataset), será utilizado três bibliotecas:
 
@@ -12,9 +12,9 @@ Para realizar a classificação do conjunto de dados (do inglês dataset), será
 
 ## Construindo o algoritmo do zero
 
-para isso vai ser preciso primeiro baixar o conjunto de dados [flags.csv](./flags.csv).
+para isso será preciso primeiramente baixar o conjunto de dados [flags.csv](./flags.csv).
  
-depois crie um arquivo denominado ```classificador.py``` e abra em um editor de texto.
+depois criar um arquivo denominado ```classificador.py``` e abrir em um editor de texto.
 <hr>
 
 ## após abrir o arquivo, vamos começar a implementação do código propriamente dito: 
