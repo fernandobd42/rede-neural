@@ -26,7 +26,7 @@ import pandas as pd
 import copy
 ````
 
-#### Definir o modelo de aprendizagem que será utilizado
+#### Definindo o modelo de aprendizagem que será utilizado
 
 No nosso caso será utilizado o modelo <b>Redes Neurais</b>
 ````
@@ -75,7 +75,7 @@ atrib_num = base.iloc[:, numericos].values
 atrib_nom = base.iloc[:, nominais].values
 ````
 
-definindo o atributo classe, ou seja, a coluna (27) do conjunto de dados, a qual contém o atributo utilizado para a classificação
+definindo o atributo classe, ou seja, a coluna (27) do conjunto de dados
 ````
 classe = base.iloc[:, 27].values
 ````

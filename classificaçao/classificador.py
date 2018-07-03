@@ -1,9 +1,11 @@
+# Importando as bibliotecas
 import numpy as np
 import pandas as pd
 import copy
 
-#%%Definir o modelo de aprendizagem que será utilizado
 
+#%% Definindo o modelo de aprendizagem que será utilizado
+# No nosso caso será utilizado o modelo Redes Neurais
 modelo_desejado = 'Redes Neurais'
 #modelo_desejado = 'Arvores de Decisão'
 #modelo_desejado = 'KNN'
@@ -22,26 +24,25 @@ elif modelo_desejado == 'Naive Bayes':
     from sklearn.naive_bayes import GaussianNB
     classificador = GaussianNB()
 
-# Leitura dos dados
+# Fazendo leitura dos dados
 base = pd.read_csv('flags.csv')
 
-# Ordenar dados pela classe
+# Ordenando os dados pela classe
 base = base.sort_values(by=base.keys()[-1])
 
 #%% Pre-processamento nos atributos
-
-# Definir os indices de cada tipo de atributo
-# Os indices que nao apareceram foi porque foram considerados
-# inuteis para classificacao
+# Por meio da definição dos índices de cada tipo de atributo
 numericos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26]
 nominais = [0, 18, 28, 29]
 
+# indexando os índices dos atributos numericos e nominais à variáveis auxiliar
 atrib_num = base.iloc[:, numericos].values
 atrib_nom = base.iloc[:, nominais].values
+
+# Definindo o atributo classe, ou seja, a coluna (27) do conjunto de dados
 classe = base.iloc[:, 27].values
 
-# Convercao de atributos nominais para numericos
-
+# Convertendo os atributos nominais para numericos
 from sklearn.preprocessing import LabelEncoder
 labelencoder = LabelEncoder()
 
@@ -52,20 +53,19 @@ for i in range(len(nominais)):
 
 atrib_nom = atrib_nom.astype(int)
 
-# Conversao dos nominais que agora sao inteiros em binarios
-
+# Convertendo os atributos nominais que agora sao inteiros em binarios
 from sklearn.preprocessing import OneHotEncoder
 onehotencoder = OneHotEncoder()
 
 atrib_nom = onehotencoder.fit_transform(atrib_nom).toarray()
 
-# Concatenar atributos gerando DataSet
+# Concatenando os atributos e gerando o conjunto de dados pradronizado
 previsores = np.concatenate((atrib_num, atrib_nom), axis = 1)
 
-#%%#########################################
-### Validacao Estatistica dos resultados ###
 
-# Instanciar objeto para normalização Z-score
+#%% Validacao Estatistica dos resultados ###
+
+# Instanciando objeto para normalização Z-score (escore padrão (média e desvio padrão))
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 
@@ -74,15 +74,14 @@ from sklearn.metrics import confusion_matrix
 # Descobrindo o número de instâncias da base
 n_inst = base.shape[0]
 
+# Implementando k-fold (validação cruzada), ordenando os dados pela classe
 
-# K-fold implementado na mão,
-# os dados devem ser ordenados pela classe
 n_folds = 2
 kfold = []
 for i in range(n_inst):
       kfold.append(i % n_folds)
       
-# Loop da Validação cruzada K-fold
+# Estrutura de repetição (Loop) para validação cruzada (K-fold)
 Rates = []
 for pasta in range(n_folds):
       # A cada iteração deve-se copiar os previsores novamente
@@ -115,7 +114,7 @@ for pasta in range(n_folds):
       print(Rate)
       Rates.append(100*Rate)
 
-# Calcula média e desvio padrão das taxas de sucesso do K-fold
+# Calculando a média e o desvio padrão das taxas de sucesso do K-fold
 media = np.mean(Rates)
 desvio = np.std(Rates)
 print('media = %.2f %%, Desvio = %.2f %%' %(media,desvio))
