@@ -15,9 +15,10 @@ Para realizar a classificação do conjunto de dados (do inglês dataset), será
 para isso será preciso primeiramente baixar o conjunto de dados [flags.csv](./flags.csv).
  
 depois criar um arquivo denominado ```classificador.py``` e abrir em um editor de texto.
+
 <hr>
 
-## após abrir o arquivo, vamos começar a implementação do código propriamente dito: 
+### após abrir o arquivo, vamos começar a implementação do código propriamente dito: 
 
 Importando as bibliotecas
 ````
@@ -26,7 +27,7 @@ import pandas as pd
 import copy
 ````
 
-#### Definindo o modelo de aprendizagem que será utilizado
+### Definindo o modelo de aprendizagem que será utilizado
 
 No nosso caso será utilizado o modelo <b>Redes Neurais</b>
 ````
@@ -61,7 +62,7 @@ base = base.sort_values(by=base.keys()[-1])
 
 <hr>
 
-#### Pre-processando os atributos
+### Pre-processando os atributos
  
 Por meio da definição dos índices de cada tipo de atributo
 ````

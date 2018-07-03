@@ -17,7 +17,7 @@ para isso será preciso primeiramente baixar o conjunto de dados [winequality-re
 depois criar um arquivo denominado ```regressao.py``` e abrir em um editor de texto.
 <hr>
 
-## após abrir o arquivo, vamos começar a implementação do código propriamente dito: 
+### após abrir o arquivo, vamos começar a implementação do código propriamente dito: 
 
 Importando as bibliotecas
 ````
@@ -35,7 +35,7 @@ base = pd.read_csv('winequality-red.csv')
 
 <hr>
 
-#### Pre-processando os atributos
+### Pre-processando os atributos
 
 Por meio da definição dos índices de cada tipo de atributo
 ````
@@ -52,7 +52,7 @@ definindo o atributo classe, ou seja, a coluna (11) do conjunto de dados
 classe = base.iloc[:, 11].values
 ````
 
-dividindo matrizes ou matrizes em subconjuntos aleatórios de treinamento e teste
+dividindo matrizes em subconjuntos aleatórios de treinamento e teste
 ````
 splits = ms.train_test_split(atrib_num, classe, test_size=0.2)
 X_train, X_test, y_train, y_test = splits
@@ -69,6 +69,8 @@ trainR2 = []
 testR2 = []
 ````
 
+<hr>
+
 ### Validacao Estatistica dos resultados
 
 Instanciando objeto para normalização Z-score (escore padrão (média e desvio padrão))
@@ -77,12 +79,12 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 ````
 
-o método 'fit' ajusta o modelo aos dados que está sendo fornecidos. É aí que o modelo "aprende" a partir dos dados.
+o método ```fit``` ajusta o modelo aos dados que está sendo fornecidos. É aí que o modelo "aprende" a partir dos dados.
 ````
 scaler_previsores = scaler.fit(X_train)
 ````
 
-o método transform realiza a padronização centralizando e dimensionando os dados os dados de treinamento e de teste
+o método ```transform``` realiza a padronização centralizando e dimensionando os dados os dados de treinamento e de teste
 ````
 X_train = scaler_previsores.transform(X_train)
 X_test = scaler_previsores.transform(X_test)
@@ -120,8 +122,6 @@ plt.show()
 ````
 
 <hr>
-
-### 
 
 ### FIM 
 O código completo se encontra [aqui](./regressao.py)
